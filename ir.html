@@ -6,6 +6,17 @@
     <title>Calculadora de IR</title>
     <style>
         body {
+
+         font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://cdn.neowin.com/news/images/uploaded/2023/05/1685529688_windows-xp-wallpaper-generative-ai.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+        }
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
@@ -40,9 +51,16 @@
             color: white;
             border: none;
             border-radius: 5px;
+            margin: 5px;
         }
         .form-container button:hover {
             background-color: #45a049;
+            }
+        .form-container .back-btn {
+            background-color: #f44336;
+        }
+        .form-container .back-btn:hover {
+            background-color: #e53935;
         }
     </style>
 </head>
@@ -56,6 +74,7 @@
             <input type="number" id="netSalary" name="netSalary" required><br><br>
 
             <button type="button" onclick="calculateIR()">Calcular</button>
+            <button type="button" class="back-btn" onclick="goBack()">Voltar</button>
         </form>
     </div>
 
@@ -71,6 +90,10 @@
             }
 
             alert(`Valor do IR é R$ ${irValue.toFixed(2)}`);
+        }
+        function goBack() {
+            // Redireciona para a tela de login
+            window.location.href = 'menu.html';
         }
     </script>
 </body>
