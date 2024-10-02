@@ -11,7 +11,9 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background-image: url('https://cdn.neowin.com/news/images/uploaded/2023/05/1685529688_windows-xp-wallpaper-generative-ai.jpg');
+            background-size: cover;
+            background-position: center;
             margin: 0;
         }
         .login-container {
@@ -61,7 +63,7 @@
             const name = document.getElementById('name').value;
             const password = document.getElementById('password').value;
 
-            if (name === 'Caio' && password === '1234') {
+            if (name === 'Caio','admin' && password === '1234') {
                 alert('Login bem-sucedido!');
                 // Redirecionar para a página de menu
                 window.location.href = 'menu.html';
