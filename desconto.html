@@ -60,6 +60,7 @@
 
             <button type="button" onclick="calculateDiscount()">Calcular</button>
         </form>
+        <button onclick="goBack()">Voltar ao Menu</button>
     </div>
 
     <script>
@@ -71,6 +72,11 @@
 
             alert(`Seu desconto é ${discountPercentage.toFixed(2)}% .`);
         }
+
+        function goBack() {
+            window.location.href = 'menu.html';
+        }
     </script>
 </body>
 </html>
+
