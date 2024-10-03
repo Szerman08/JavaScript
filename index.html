@@ -6,7 +6,7 @@
     <title>Página de Login</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -15,36 +15,67 @@
             background-size: cover;
             background-position: center;
             margin: 0;
+            color: #333;
         }
+
         .login-container {
             text-align: center;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.85); /* Fundo semi-transparente */
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 320px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
+
+        .login-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
         .login-container input {
             display: block;
             width: calc(100% - 20px);
-            margin: 10px auto;
-            padding: 10px;
+            margin: 15px auto;
+            padding: 12px;
             font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
         }
+
+        .login-container input:focus {
+            border-color: #2575fc;
+            outline: none;
+            box-shadow: 0 0 8px rgba(37, 117, 252, 0.2);
+        }
+
         .login-container button {
             width: calc(100% - 20px);
-            padding: 10px;
-            font-size: 16px;
+            padding: 12px;
+            font-size: 18px;
             cursor: pointer;
             background-color: #4CAF50;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
+
         .login-container button:hover {
             background-color: #45a049;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-container button:active {
+            background-color: #3e8e41;
+            box-shadow: none;
         }
     </style>
 </head>
@@ -59,11 +90,14 @@
     </div>
 
     <script>
+        
+        
         function validateLogin() {
             const name = document.getElementById('name').value;
             const password = document.getElementById('password').value;
 
-            if (name === 'Caio','admin' && password === '1234') {
+            // Verifica se o nome é "Caio" ou "admin" e a senha é "1234"
+            if ((name == 'Caio' || name == 'admin') && password === '1234') {
                 alert('Login bem-sucedido!');
                 // Redirecionar para a página de menu
                 window.location.href = 'menu.html';
