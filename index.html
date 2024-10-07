@@ -11,7 +11,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('https://cdn.neowin.com/news/images/uploaded/2023/05/1685529688_windows-xp-wallpaper-generative-ai.jpg');
+            background-image: url('https://img.ibxk.com.br/2015/07/01/01145142154607.jpg?w=1016&h=483&mode=pad&scale=canvas');
             background-size: cover;
             background-position: center;
             margin: 0;
@@ -66,6 +66,7 @@
             border: none;
             border-radius: 8px;
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            margin: 10px 0;
         }
 
         .login-container button:hover {
@@ -77,21 +78,35 @@
             background-color: #3e8e41;
             box-shadow: none;
         }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .button-container button {
+            flex: 1;
+        }
     </style>
 </head>
 <body>
+    <center>
     <div class="login-container">
         <h1>Login</h1>
         <form id="loginForm">
             <input type="text" id="name" name="name" placeholder="Nome" required>
             <input type="password" id="password" name="password" placeholder="Senha" required>
-            <button type="button" onclick="validateLogin()">Entrar</button>
+            
+            <div class="button-container">
+                <button type="button" onclick="validateLogin()">Entrar</button>
+                <button type="button" onclick="guestLogin()">Entrar como convidado</button>
+            </div>
         </form>
     </div>
+</center>
 
     <script>
-        
-        
         function validateLogin() {
             const name = document.getElementById('name').value;
             const password = document.getElementById('password').value;
@@ -105,6 +120,12 @@
                 alert('Nome ou senha incorretos.');
             }
         }
+
+        function guestLogin() {
+            // Redirecionar diretamente para a página de menu
+            window.location.href = 'menu.html';
+        }
     </script>
 </body>
 </html>
+
